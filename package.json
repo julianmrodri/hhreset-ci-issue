@@ -13,7 +13,7 @@
         "deploy": "TASKS=true hardhat run scripts/deploy_all.ts --network localhost",
         "devchain": "hardhat node",
         "test": "yarn test:unit",
-        "test:unit": "yarn test:plugins && yarn test:p0",
+        "test:unit": "yarn test:plugins",
         "test:p0": "PROTO_IMPL=0 hardhat test test/*.test.ts",
         "test:plugins": "hardhat test test/libraries/*.test.ts test/plugins/*.test.ts",
         "lint": "bash tools/lint",
