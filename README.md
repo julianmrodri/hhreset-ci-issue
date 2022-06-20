@@ -55,4 +55,4 @@ To reproduce simply look at the jobs for the open [ PR#16 ](https://github.com/j
 
 ## Important Hint
 
-If you remove `contracts/fuzz/RTokenDiffTesting.sol` from the repo then the test passes, which indicates this could be the issue. The interesting thing is that this contract is not used anywhere in the code but for some reason seems to break something in the HH network. You can see how it works in  [ PR#15 ](https://github.com/julianmrodri/hhreset-ci-issue/pull/15/) (SUCCESSFUL CI) where the CI completed successfully.
+If you remove `contracts/fuzz/RTokenDiffTesting.sol` from the repo then the test passes, which indicates this could be the issue. The interesting thing is that this contract is not used anywhere in the code but for some reason seems to break something in the HH network. You can see how it works in  [ PR#14 ](https://github.com/julianmrodri/hhreset-ci-issue/pull/14/) (SUCCESSFUL CI) where the CI completed successfully.
