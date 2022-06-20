@@ -15,11 +15,8 @@
         "test": "yarn test:unit",
         "test:unit": "yarn test:plugins",
         "test:plugins": "hardhat test test/AbcFailTest.test.ts",
-        "lint": "bash tools/lint",
         "eslint": "eslint test/",
-        "prettier": "bash tools/prettier",
-        "size": " hardhat size-contracts",
-        "slither": "bash tools/slither"
+        "size": " hardhat size-contracts"
     },
     "repository": {
         "type": "git",
