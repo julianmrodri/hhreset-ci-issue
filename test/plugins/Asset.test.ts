@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { Wallet } from 'ethers'
-import { ethers, waffle } from 'hardhat'
+import hre, { ethers, waffle } from 'hardhat'
 import { ZERO_ADDRESS } from '../../common/constants'
 import { bn, fp } from '../../common/numbers'
 import {
@@ -48,6 +48,8 @@ describe('Assets contracts #fast', () => {
   const amt = fp('1e4')
 
   before('create fixture loader', async () => {
+    // Reset network for clean execution
+    await hre.network.provider.send('hardhat_reset')
     ;[wallet] = (await ethers.getSigners()) as unknown as Wallet[]
     loadFixture = createFixtureLoader([wallet])
   })
