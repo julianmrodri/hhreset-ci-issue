@@ -14,9 +14,7 @@
         "devchain": "hardhat node",
         "test": "yarn test:unit",
         "test:unit": "yarn test:plugins",
-        "test:plugins": "hardhat test test/AbcFailTest.test.ts",
-        "eslint": "eslint test/",
-        "size": " hardhat size-contracts"
+        "test:plugins": "hardhat test test/AbcFailTest.test.ts"
     },
     "repository": {
         "type": "git",

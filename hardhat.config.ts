@@ -67,24 +67,6 @@ const config: any = {
         settings: { optimizer: { enabled: false } },
       },
     ],
-    overrides: {
-      'contracts/p1/aux/Deployer.sol': {
-        version: '0.8.9',
-        settings: process.env.NO_OPT ? {} : { optimizer: { enabled: true, runs: 200 } },
-      },
-      'contracts/p1/RToken.sol': {
-        version: '0.8.9',
-        settings: process.env.NO_OPT ? {} : { optimizer: { enabled: true, runs: 400 } },
-      },
-      'contracts/p1/StRSRVotes.sol': {
-        version: '0.8.9',
-        settings: process.env.NO_OPT ? {} : { optimizer: { enabled: true, runs: 800 } },
-      },
-      'contracts/plugins/aave/StaticATokenLM.sol': {
-        version: '0.6.12',
-        settings: process.env.NO_OPT ? {} : { optimizer: { enabled: true, runs: 200 } },
-      },
-    },
   },
   paths: {
     sources: src_dir,
@@ -104,17 +86,6 @@ const config: any = {
   gasReporter: {
     enabled: process.env.REPORT_GAS ? true : false,
   },
-}
-
-if (process.env.ONLY_FAST) {
-  config.mocha.grep = '/#fast/'
-  config.mocha.slow = 200
-  config.gasReporter.enabled = false
-}
-
-if (process.env.JOBS) {
-  config.mocha.parallel = true
-  config.mocha.jobs = process.env.JOBS
 }
 
 export default <HardhatUserConfig>config
