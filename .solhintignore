@@ -3,7 +3,6 @@ node_modules
 # Ignore the style of pure-test contracts
 test/
 mocks/
-fuzz/
 
 # Ignore the style of external contracts
 aave/

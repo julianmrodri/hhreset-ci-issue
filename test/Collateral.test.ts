@@ -2,8 +2,8 @@ import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 import { expect } from 'chai'
 import { BigNumber, ContractFactory, Wallet } from 'ethers'
 import { ethers, waffle } from 'hardhat'
-import { CollateralStatus, MAX_UINT256, ZERO_ADDRESS } from '../../common/constants'
-import { bn, fp } from '../../common/numbers'
+import { CollateralStatus, MAX_UINT256, ZERO_ADDRESS } from '../common/constants'
+import { bn, fp } from '../common/numbers'
 import {
   AaveLendingAddrProviderMock,
   AaveLendingPoolMock,
@@ -23,10 +23,10 @@ import {
   TestIBackingManager,
   TestIRToken,
   USDCMock,
-} from '../../typechain'
-import { advanceTime, getLatestBlockTimestamp, setNextBlockTimestamp } from '../utils/time'
-import snapshotGasCost from '../utils/snapshotGasCost'
-import { Collateral, defaultFixture, IConfig } from '../fixtures'
+} from '../typechain'
+import { advanceTime, getLatestBlockTimestamp, setNextBlockTimestamp } from './utils/time'
+import snapshotGasCost from './utils/snapshotGasCost'
+import { Collateral, defaultFixture, IConfig } from './fixtures'
 
 const createFixtureLoader = waffle.createFixtureLoader
 
