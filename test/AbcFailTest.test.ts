@@ -1,7 +1,7 @@
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 import { expect } from 'chai'
 import hre, { ethers } from 'hardhat'
-import { ZERO_ADDRESS } from '../../common/constants'
+import { ZERO_ADDRESS } from '../common/constants'
 
 describe('Test Breaks with Reset', () => {
   let owner: SignerWithAddress
