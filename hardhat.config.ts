@@ -12,10 +12,6 @@ import forkBlockNumber from './test/integration/fork-block-numbers'
 
 dotenv.config()
 
-if (process.env.TASKS === 'true') {
-  // eslint-disable-next-line node/no-missing-require
-  require('./tasks')
-}
 
 const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || process.env.ALCHEMY_MAINNET_RPC_URL || ''
 const ROPSTEN_RPC_URL = process.env.ROPSTEN_RPC_URL || ''
