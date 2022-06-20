@@ -11,9 +11,9 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 ....
 ```
 
-It is important to remark that locally the test passes successfuly, however in github actions it breaks with the error shown above.
+This happens even if no contract is used at all and if no contract is deployed during the tests. It is important to remark that locally the test passes successfuly, however in github actions it breaks with the error shown above.
 
-## How to run tests locally
+## How to run tests locally - Successful test
 
 1. Install dependencies
 ```
@@ -39,7 +39,7 @@ The test will succeed locally:
       ✔ Cannot reach in CI due to failure in reset
 ```
 
-## How to reproduce issue in CI
+## How to reproduce issue in CI - Failed test
 
 The error occurs with any PR with any change to force the CI to run. The CI will fail with the error shown above, at the time the hardhat reset is performed.
 ```
@@ -50,9 +50,9 @@ The error occurs with any PR with any change to force the CI to run. The CI will
 FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
 ```
 
-To reproduce simply rerun the jobs for the open PR#15 (FAIL CI) and see how it fails in Github Actions.
+To reproduce simply look at the jobs for the open [ PR#16 ](https://github.com/julianmrodri/hhreset-ci-issue/pull/16/)(FAIL CI) and see how it fails in Github Actions.
 
 
 ## Important Hint
 
-If you remove `contracts/fuzz/RTokenDiffTesting.sol` from the repo then the test passes, which indicates this could be the issue. The interesting thing is that this contract is not used anywhere in the code but for some reason seems to break something in the HH network. You can see how it works in PR# 14 (SUCCESSFUL CI) where the CI completed successfully.
+If you remove `contracts/fuzz/RTokenDiffTesting.sol` from the repo then the test passes, which indicates this could be the issue. The interesting thing is that this contract is not used anywhere in the code but for some reason seems to break something in the HH network. You can see how it works in  [ PR#15 ](https://github.com/julianmrodri/hhreset-ci-issue/pull/15/) (SUCCESSFUL CI) where the CI completed successfully.
