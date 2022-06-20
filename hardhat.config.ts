@@ -8,7 +8,6 @@ import 'solidity-coverage'
 
 import dotenv from 'dotenv'
 import { HardhatUserConfig } from 'hardhat/types'
-import forkBlockNumber from './test/integration/fork-block-numbers'
 
 dotenv.config()
 
@@ -31,7 +30,6 @@ const config: any = {
     hardhat: {
       forking: {
         url: MAINNET_RPC_URL,
-        blockNumber: forkBlockNumber['default'],
         enabled: !!process.env.FORK,
       },
       gas: 0x1ffffffff,
