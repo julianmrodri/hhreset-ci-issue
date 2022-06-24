@@ -3,6 +3,7 @@ import { expect } from 'chai'
 import hre, { ethers } from 'hardhat'
 import { ZERO_ADDRESS } from '../common/constants'
 
+// Simply add a comment to the test - FAIL CI
 describe('Test Breaks with Reset', () => {
   let owner: SignerWithAddress
 
