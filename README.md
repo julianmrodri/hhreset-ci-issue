@@ -1,6 +1,6 @@
-# Hardhat Reset issue in CI
+# Hardhat Reset issue
 
-In this repo, any test that performs a `hardhat_reset` action ends in failure in CI with the following error:
+In this repo, any test that performs a `hardhat_reset` action ends in failure in CI (and when running local coverage) with the following error:
 
 ```
 <--- Last few GCs --->
@@ -56,3 +56,13 @@ To reproduce simply look at the jobs for the open [ PR#16 ](https://github.com/j
 ## Important Hint
 
 If you remove `contracts/fuzz/RTokenDiffTesting.sol` from the repo then the test passes, which indicates this could be the issue. The interesting thing is that this contract is not used anywhere in the code but for some reason seems to break something in the HH network. You can see how it works in  [ PR#14 ](https://github.com/julianmrodri/hhreset-ci-issue/pull/14/) (SUCCESSFUL CI) where the CI completed successfully.
+
+## Also happens in Coverage
+
+This issue can be also replicated locally running npx hardhat coverage.
+
+To replicate do this:
+
+1- Clone provided repo on Issue description
+2- install dependencies and compile contracts
+3 - On master run npx hardhat coverage. This would throw the FATAL ERROR. If you simply delete contracts/fuzz/RTokenDiff.sol and run again npx hardhat coverage works fine! Even though the contract is not used anywhere it breaks the coverage execution.
