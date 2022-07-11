@@ -63,6 +63,8 @@ This issue can be also replicated locally running npx hardhat coverage.
 
 To replicate do this:
 
-1- Clone provided repo on Issue description
-2- install dependencies and compile contracts
-3 - On master run npx hardhat coverage. This would throw the FATAL ERROR. If you simply delete contracts/fuzz/RTokenDiff.sol and run again npx hardhat coverage works fine! Even though the contract is not used anywhere it breaks the coverage execution.
+- Clone provided repo on Issue description
+- Unstall dependencies and compile contracts
+- On master run `npx hardhat coverage` 
+
+This would throw the FATAL ERROR. If you simply delete `contracts/fuzz/RTokenDiff.sol` and run again `npx hardhat coverage` works fine! Even though the contract is not used anywhere it breaks the coverage execution.
